@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="https://smkmaarifkarangreja.online/media_library/images/deb9bc9f4d37db158509665da2e88634.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://smkmaarifkarangreja.online/media_library/images/deb9bc9f4d37db158509665da2e88634.png">
     <title>@yield('title')</title>
     @yield('cssatas')
     <!-- Custom CSS -->
@@ -17,10 +19,6 @@
     <link href="{{ asset('assets/extra-libs/calendar/calendar.css') }}" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="{{ asset('dist/css/style.min.css') }}" rel="stylesheet">
-    {{--
-    <link rel="stylesheet" href="{{ asset('assets/vendors/lineawesome/css/line-awesome.min.css') }}">
-    --}}
-    {{-- custom css --}}
     @toastr_css
     @yield('cssbawah')
 
@@ -32,54 +30,20 @@
     <!-- ============================================================== -->
     <div class="preloader">
         <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
+            <div class="lds-pos">SMK Ma'arif Karangreja</div>
+            <div class="lds-pos">SMK Ma'arif Karangreja</div>
         </div>
     </div>
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
     <div id="main-wrapper">
-        <!-- ============================================================== -->
-        <!-- Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
         <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin5">
                     <!-- This is for the sidebar toggle which is visible on mobile only -->
                     <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
                             class="ti-menu ti-close"></i></a>
-                    <!-- ============================================================== -->
-                    <!-- Logo -->
-                    <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.html">
-                        <!-- Logo icon -->
-                        {{-- <b class="logo-icon p-l-10"> --}}
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
-                            {{-- <img width="50px" src="https://smkmaarifkarangreja.online/media_library/images/deb9bc9f4d37db158509665da2e88634.png" alt="homepage" class="light-logo" /> --}}
-
-                        {{-- </b> --}}
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
-                        <span class="logo-text">
-                            <!-- dark Logo text -->
-                            <h3><span class="text-success">{{ Auth::user()->level }}</span><br><span class="text-warning">{{ Auth::user()->name }}</span></h3>
-
-                        </span>
-                        <!-- Logo icon -->
-                        <!-- <b class="logo-icon"> -->
-                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                        <!-- Dark Logo icon -->
-                        <!-- <img src="{{ asset('assets/images/logo-text.png') }}" alt="homepage" class="light-logo" /> -->
-
-                        <!-- </b> -->
-                        <!--End Logo icon -->
-                    </a>
-                    <!-- ============================================================== -->
-                    <!-- End Logo -->
-                    <!-- ============================================================== -->
-                    <!-- ============================================================== -->
                     <!-- Toggle which is visible on mobile only -->
                     <!-- ============================================================== -->
                     <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
@@ -90,55 +54,25 @@
                 <!-- ============================================================== -->
                 <!-- End Logo -->
                 <!-- ============================================================== -->
-                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-                    <!-- ============================================================== -->
-                    <!-- toggle and nav items -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav float-left mr-auto">
-                        <li class="nav-item d-none d-md-block"><a
-                                class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
-                                data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
-                                href="javascript:void(0)"><i class="ti-search"></i></a>
-                            <form class="app-search position-absolute">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
-                                    class="srh-btn"><i class="ti-close"></i></a>
-                            </form>
-                        </li>
-                    </ul>
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin4">
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
                     <!-- ============================================================== -->
-                    <ul class="navbar-nav float-right">
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
+                    <ul class="navbar-nav float-right ml-auto">
+                        <li class="nav-item d-none d-md-block">
+                            <a class="nav-link sidebartoggler waves-effect waves-light"
+                            href="javascript:void(0)" data-sidebartype="mini-sidebar">
+                                <i class="mdi mdi-menu font-24"></i>
+                            </a>
+                        </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href=""
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                    src="{{ asset('assets/images/users/1.jpg') }}" alt="user" class="rounded-circle"
-                                    width="31"></a>
-                            <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i>
-                                    My Profile</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i>
-                                    Inbox</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void(0)"><i
-                                        class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
-                                        class="fa fa-power-off m-r-5 m-l-5"></i>{{__('Logout')}}</a>
-                                        <form action="{{ route('logout') }}" method="POST"
-                                        id="logout-form" style="display: none;">
-                                        @csrf
-                                        </form>
-                                <div class="dropdown-divider"></div>
-                            </div>
+                            <a class="nav-link" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
+                                        class="fa fa-power-off m-r-5 m-l-5"></i>{{ __('  Logout') }}</a>
+                                <form action="{{ route('logout') }}" method="POST" id="logout-form"
+                                    style="display: none;">
+                                    @csrf
+                                </form>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -155,13 +89,14 @@
         <!-- ============================================================== -->
         <aside class="left-sidebar" data-sidebarbg="skin5">
             <!-- Sidebar scroll-->
+
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-30">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{{ route('dashboard') }}" aria-expanded="false"><i class="fab fa-windows"></i><span
-                                    class="hide-menu">Dashboard</span></a></li>
+                                href="{{ route('dashboard') }}" aria-expanded="false"><i
+                                    class="fab fa-windows"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
                                 href="javascript:void(0)" aria-expanded="false"><i class="fas fa-database"></i><span
                                     class="hide-menu">Induk Data</span></a>
@@ -173,7 +108,8 @@
                                             class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Manajemen Mata
                                             Pelajaran</span></a></li>
                                 <li class="sidebar-item"><a href="{{ route('guru.index') }}" class="sidebar-link"><i
-                                            class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Manajemen Guru &
+                                            class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Manajemen Guru
+                                            &
                                             Karyawan</span></a></li>
                                 <li class="sidebar-item"><a href="{{ route('siswa.index') }}" class="sidebar-link"><i
                                             class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Manajemen
@@ -184,11 +120,12 @@
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
-                                href="javascript:void(0)" aria-expanded="false"><i class="fab fa-wordpress-simple"></i><span
-                                    class="hide-menu">CMS Website</span></a>
+                                href="javascript:void(0)" aria-expanded="false"><i
+                                    class="fab fa-wordpress-simple"></i><span class="hide-menu">CMS Website</span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="form-basic.html" class="sidebar-link"><i
-                                            class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Kategori</span></a>
+                                            class="mdi mdi-arrow-right-bold"></i><span
+                                            class="hide-menu">Kategori</span></a>
                                 </li>
                                 <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i
                                             class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Posting
@@ -197,7 +134,8 @@
                                             class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">File
                                             Manager</span></a></li>
                                 <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i
-                                            class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Feed Back</span></a>
+                                            class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Feed
+                                            Back</span></a>
                                 </li>
                             </ul>
                         </li>
@@ -243,16 +181,18 @@
                                             class="mdi mdi-arrow-right-bold"></i><span
                                             class="hide-menu">Setting</span></a></li>
                                 <li class="sidebar-item"><a href="pages-chat.html" class="sidebar-link"><i
-                                            class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Cetak</span></a>
+                                            class="mdi mdi-arrow-right-bold"></i><span
+                                            class="hide-menu">Cetak</span></a>
                                 </li>
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
-                                href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-cash-multiple"></i><span
-                                    class="hide-menu">E Voting</span></a>
+                                href="javascript:void(0)" aria-expanded="false"><i
+                                    class="mdi mdi-cash-multiple"></i><span class="hide-menu">E Voting</span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="authentication-login.html" class="sidebar-link"><i
-                                            class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Pemilih</span></a>
+                                            class="mdi mdi-arrow-right-bold"></i><span
+                                            class="hide-menu">Pemilih</span></a>
                                 </li>
                                 <li class="sidebar-item"><a href="authentication-register.html" class="sidebar-link"><i
                                             class="mdi mdi-arrow-right-bold"></i><span
@@ -267,7 +207,8 @@
                                     class="hide-menu">CBT Online</span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="error-403.html" class="sidebar-link"><i
-                                            class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Mata Pelajaran -
+                                            class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Mata Pelajaran
+                                            -
                                             Guru</span></a></li>
                                 <li class="sidebar-item"><a href="error-404.html" class="sidebar-link"><i
                                             class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Peserta
@@ -276,7 +217,8 @@
                                             class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Bank
                                             Soal</span></a></li>
                                 <li class="sidebar-item"><a href="error-405.html" class="sidebar-link"><i
-                                            class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Analisa</span></a>
+                                            class="mdi mdi-arrow-right-bold"></i><span
+                                            class="hide-menu">Analisa</span></a>
                                 </li>
                                 <li class="sidebar-item"><a href="error-500.html" class="sidebar-link"><i
                                             class="mdi mdi-arrow-right-bold"></i><span
@@ -287,18 +229,21 @@
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
-                            href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-settings"></i><span
-                                class="hide-menu"> Settings</span></a>
-                        <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item"><a href="{{ route('settings.source') }}" class="sidebar-link"><i
-                                        class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Source</span></a>
-                            </li>
-                            <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i
-                                        class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Informasi Sekolah</span></a></li>
-                            <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i
-                                        class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Pengaturan lain</span></a></li>
-                        </ul>
-                    </li>
+                                href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-settings"></i><span
+                                    class="hide-menu"> Settings</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="{{ route('settings.source') }}"
+                                        class="sidebar-link"><i class="mdi mdi-arrow-right-bold"></i><span
+                                            class="hide-menu">Source</span></a>
+                                </li>
+                                <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i
+                                            class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Informasi
+                                            Sekolah</span></a></li>
+                                <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i
+                                            class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Pengaturan
+                                            lain</span></a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -353,7 +298,7 @@
     <!-- ============================================================== -->
 
     <script src="{{ asset('assets/libs/jquery/dist/jquery.min.js') }}""></script>
-    <script src="{{ asset('dist/js/jquery.ui.touch-punch-improved.js') }}""></script>
+    <script src=" {{ asset('dist/js/jquery.ui.touch-punch-improved.js') }}""></script>
     <script src="{{ asset('dist/js/jquery-ui.min.js') }}""></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src=" {{ asset('assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>

@@ -17,7 +17,7 @@ class SettingController extends Controller
     {
         $no = 0;
         $srcgtk =  DB::table('src_jenis_gtk')->get();
-        return view('induk.setting.resource.index',compact('srcgtk','no'));
+        return view('admin.setting.resource.index',compact('srcgtk','no'));
     }
 
     public function createsource(Request $request)

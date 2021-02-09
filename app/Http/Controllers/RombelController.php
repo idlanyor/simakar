@@ -9,7 +9,7 @@ use App\Models\Jurusan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class KelasController extends Controller
+class RombelController extends Controller
 {
     public function __construct()
     {
@@ -19,55 +19,65 @@ class KelasController extends Controller
     public function index()
     {
 
-        $batas = 10;
-        $kelas = Kelas::orderBy('id','asc')->paginate($batas);
+        $batas   = 10;
+        $kelas   = Kelas::orderBy('id','asc')->paginate($batas);
         $jurusan = Jurusan::orderBy('id','asc')->paginate($batas);
-        $rombel = Rombel::orderBy('id','asc')->paginate($batas);
-        return view('induk.kelas.index',compact('kelas','batas','jurusan','rombel'));
+        $rombel  = Rombel::orderBy('id','asc')->paginate($batas);
+        return view('admin.rombel.index',compact('kelas','batas','jurusan','rombel'));
     }
     public function show()
     {
-        return view('induk.kelas.create');
+        return $this->addKelas();
     }
-    // function create
     public function create()
     {
-        $wk = Guru::all();
-        $kelas = Kelas::all();
-        $jurusan = Jurusan::all();
-        return view('induk.kelas.create',compact('wk','kelas','jurusan'));
+        return $this->addRombel();
     }
-    public function createJurusan()
+    public function addRombel()
     {
-        return view('induk.kelas.create');
+        $wk      = Guru::all();
+        $kelas   = Kelas::all();
+        $jurusan = Jurusan::all();
+        return view('admin.rombel.create',compact('wk','kelas','jurusan'));
+
+    }
+    // method create kelas
+    public function addKelas()
+    {
+        return view('admin.rombel.kelas.create');
+    }
+    //method tambah jurusan
+    public function addJurusan()
+    {
+        return view('admin.rombel.jurusan.create');
     }
 
     public function storeKelas(Request $request)
     {
         $this->validate($request,[
-            'nama_kelas'      =>'required',
-            'seo_kelas'       =>'required|unique:kelas'#id
+            'nama_kelas' =>'required',
+            'seo_kelas'  =>'required|unique:kelas'#id
         ]);
         $kelas = DB::table('kelas')->insertGetId([
             'nama_kelas' => $request->nama_kelas,
             'seo_kelas'  => $request->seo_kelas
             ]);
         toastr()->success('Data berhasil disimpan!');
-        return redirect('/admin/kelas');
+        return $this->index();
     }
 
     public function storeJurusan(Request $request)
     {
         $this->validate($request,[
-            'nama_jurusan'      =>'required',
-            'seo_jurusan'       =>'required|unique:jurusan'#id
+            'nama_jurusan' =>'required',
+            'seo_jurusan'  =>'required|unique:jurusan'#id
         ]);
         $jurusan = DB::table('jurusan')->insertGetId([
             'nama_jurusan' => $request->nama_jurusan,
             'seo_jurusan'  => $request->seo_jurusan
             ]);
         toastr()->success('Data berhasil disimpan!');
-        return redirect('/admin/kelas');
+        return $this->index();;
     }
 
     public function store(Request $request)

@@ -21,7 +21,7 @@ class GuruController extends Controller
     {
         $no   = 0;
         $guru = Guru::all();
-        return view('induk.guru.index',compact('no','guru'));
+        return view('admin.guru.index',compact('no','guru'));
     }
 
     /**
@@ -33,7 +33,7 @@ class GuruController extends Controller
     {
 
         $jenis = Setting::all();
-        return view('induk.guru.create',compact('jenis'));
+        return view('admin.guru.create',compact('jenis'));
     }
 
     /**
@@ -94,7 +94,7 @@ class GuruController extends Controller
     {
         $guru = Guru::find($id);
         $jenis = Setting::all();
-        return view('induk.guru.edit',compact('guru','jenis'));
+        return view('admin.guru.edit',compact('guru','jenis'));
     }
 
     /**

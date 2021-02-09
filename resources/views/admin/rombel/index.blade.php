@@ -15,7 +15,7 @@
     <div class="tab-content tabcontent-border">
         <div class="card-body tab-pane active" id="rombel" role="tabpanel">
             <h5 class="card-title">Daftar Rombel
-            <a href="{{ route('kelas.create') }}" style="float: right" class="btn btn-success" ><i class="fas fa-plus"></i>&nbsp;Tambah Rombel</a></h5><br>
+            <a href="{{ route('rombel.create') }}" style="float: right" class="btn btn-success" ><i class="fas fa-plus"></i>&nbsp;Tambah Rombel</a></h5><br>
             <div class="table-responsive">
                 <table id="zero_rombel" class="table table-striped table-bordered">
                     <thead>
@@ -47,7 +47,7 @@
         </div>
         <div class="card-body tab-pane p-20" id="kelas" role="tabpanel">
             <h5 class="card-title">Daftar Kelas
-            <a href="{{ route('kelas.tambahKelas') }}" style="float: right" class="btn btn-success" ><i class="fas fa-plus"></i>&nbsp;Tambah Kelas</a></h5><br>
+            <a href="{{ route('rombel.addKelas') }}" style="float: right" class="btn btn-success" ><i class="fas fa-plus"></i>&nbsp;Tambah Kelas</a></h5><br>
             <div class="table-responsive">
                 <table id="zero_kelas" class="table table-striped table-bordered">
                     <thead>
@@ -55,7 +55,7 @@
                             <th width="1px">No</th>
                             <th width="78px">Action</th>
                             <th>Nama Kelas</th>
-                            <th>SEO</th>
+                            <th>Tingkatan</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -75,7 +75,7 @@
         </div>
         <div class="card-body tab-pane p-20" id="jurusan" role="tabpanel">
             <h5 class="card-title">Daftar Jurusan
-            <a href="{{ route('kelas.createJurusan') }}" style="float: right" class="btn btn-success" ><i class="fas fa-plus"></i>&nbsp;Tambah Jurusan</a></h5><br>
+            <a href="{{ route('rombel.addJurusan') }}" style="float: right" class="btn btn-success" ><i class="fas fa-plus"></i>&nbsp;Tambah Jurusan</a></h5><br>
             <div class="table-responsive">
                 <table id="zero_jurusan" class="table table-striped table-bordered">
                     <thead>

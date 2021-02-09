@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Mentor Bootstrap Template - Index</title>
+  <title>SMK Ma'arif Karangreja</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -38,7 +38,7 @@
 
 <body>
 
-@include('layouts.header')
+@include('layouts.landing.header')
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex justify-content-center align-items-center">
@@ -415,7 +415,7 @@
 
   </main><!-- End #main -->
 
-@include('layouts.footer')
+@include('layouts.landing.footer')
 
   <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
   <div id="preloader"></div>

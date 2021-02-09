@@ -22,7 +22,7 @@ class UserController extends Controller
         $batas = 5;
         $users = User::orderBy('id','asc')->paginate($batas);
         $no = $batas *($users->currentPage()-1);
-        return view('induk.users.index',compact('users','no'));
+        return view('admin.users.index',compact('users','no'));
     }
 
     /**
@@ -33,7 +33,7 @@ class UserController extends Controller
     public function create()
     {
         $users = User::all();
-        return view('induk.users.create',compact('users'));
+        return view('admin.users.create',compact('users'));
     }
 
     /**

@@ -229,7 +229,7 @@
                                 href="javascript:void(0)" aria-expanded="false"><i class="fas fa-database"></i><span
                                     class="hide-menu">Induk Data</span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ route('kelas.index') }}" class="sidebar-link"><i
+                                <li class="sidebar-item"><a href="{{ route('rombel.index') }}" class="sidebar-link"><i
                                             class="mdi mdi-arrow-right-bold"></i><span class="hide-menu">Manajemen
                                             Kelas</span></a></li>
                                 <li class="sidebar-item"><a href="{{ route('mapel.index') }}" class="sidebar-link"><i

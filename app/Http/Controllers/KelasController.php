@@ -15,22 +15,30 @@ class KelasController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
-        
+
         $batas = 10;
         $kelas = Kelas::orderBy('id','asc')->paginate($batas);
         $jurusan = Jurusan::orderBy('id','asc')->paginate($batas);
         $rombel = Rombel::orderBy('id','asc')->paginate($batas);
         return view('induk.kelas.index',compact('kelas','batas','jurusan','rombel'));
     }
+    public function show()
+    {
+        return view('induk.kelas.create');
+    }
     // function create
     public function create()
     {
-        $wk = Guru::all(); 
-        $kelas = Kelas::all(); 
-        $jurusan = Jurusan::all(); 
+        $wk = Guru::all();
+        $kelas = Kelas::all();
+        $jurusan = Jurusan::all();
+        return view('induk.kelas.create',compact('wk','kelas','jurusan'));
+    }
+    public function createJurusan()
+    {
         return view('induk.kelas.create');
     }
 

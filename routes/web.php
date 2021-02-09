@@ -1,5 +1,7 @@
 <?php
-
+// menggunakan class Controller di route
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MapelController;
@@ -7,23 +9,8 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-// Auth::routes([
-//     'register' => false,
-//     'reset' =>false
-// ]);
-Route::get('/', function () {
-    return view('landing');
-});
+
+Route::get('/', [LandingController::class,'welcome']);
 Route::middleware(['auth:sanctum', 'verified'])->
 get('/dashboard', function () {
     return view('induk.index');
@@ -40,5 +27,7 @@ Route::resource('admin/siswa', SiswaController::class);
 // Route::resource('ppdb/pendaftar', UserPpdbController::class);
 //--route tambahan untuk setting--
 Route::get('admin/source', [SettingController::class,'viewSource'])->name('settings.source');
+Route::get('admin/kelas/add', [KelasController::class,'createKelas'])->name('kelas.tambahKelas');
+Route::get('admin/jurusan/add', [KelasController::class,'createJurusan'])->name('kelas.createJurusan');
 Route::post('admin/source/store', [SettingController::class,'createsource'])->name('create.source');
 Route::post('daftar', [UserController::class,'daftar'])->name('daftar');
